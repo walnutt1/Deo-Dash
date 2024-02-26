@@ -1,5 +1,5 @@
 /*******************************************************/
-// P5.play: t01_create_sprite
+// P5.play: GeoDash.js
 // Create a sprite
 // Written by ??? 
 /*******************************************************/
@@ -17,21 +17,24 @@ function setup() {
   
   PLAYER = new Sprite(30, 30, 30, 30, 'd');
   PLAYER.color = 'cyan';
-  world.gravity.y = 7;
+  world.gravity.y = 100;
   
   floor = new Sprite(SCREEN_WIDTH/2, SCREEN_HEIGHT, SCREEN_WIDTH, 5, 's');
   floor.color = 'red';
   
 document.addEventListener("keydown", 
     function(event) {
-       console.log("Key pressed!");
-       if (event.code === 'ArrowLeft') {
-       }else {
-    }
+            console.log("Key pressed!"+PLAYER.y);
+
+        if(PLAYER.y > 184 ){// 184 - found from testing - floor level
+        console.log("Key pressed!");
+        PLAYER.vel.y = -20;
+        }
 });
 
-}
 
+    
+}
 /*******************************************************/
 // draw()
 /*******************************************************/
