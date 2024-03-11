@@ -3,6 +3,18 @@
 // Create a game
 // Written by ??? 
 /*******************************************************/
+// preload()
+// Called by P5 before setup
+/*******************************************************/
+function preload() {
+  console.log("preload: ");
+
+  imgSS   = loadImage('https://codehs.com/uploads/a2da425053367a87da09a47092414651');
+  
+  imgGS   = loadImage('https://codehs.com/uploads/cc28d58ba276a177cc4afaa536a49a1e');
+  
+}
+/*******************************************************/
 console.log("%c t01_create_sprite", "color: blue;");
 
 const SCREEN_WIDTH = 700;
@@ -83,7 +95,7 @@ function youDead(_player, _obstacle){
 // Main screen functions
 
 function startScreen(){
-    background("red");
+    background(imgSS);
 
     allSprites.visible = false;
     textSize(32);
@@ -96,7 +108,7 @@ function startScreen(){
 }
 
 function gameScreen(){
-    background("#87CEEB");
+    background(imgGS);
     allSprites.visible = true;
     score++;
     if(frameCount> nextSpawn){
@@ -111,7 +123,7 @@ function gameScreen(){
 }
 
 function endScreen(){
-    background("red");
+    background(imgSS);
 
     allSprites.visible = false;
     textSize(32);
